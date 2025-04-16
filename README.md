@@ -10,7 +10,7 @@
 
 The ADXL375 is a small, thin, 3-axis accelerometer that provides low power consumption and high resolution measurement up to ±200 g. The digital output data is formatted as 16-bit, twos complement data and is accessible through a SPI (3- or 4-wire) or I2C digital interface.An integrated memory management system with a 32-level first in, first out (FIFO) buffer can be used to store data to minimize host processor activity and lower overall system power consumption.Low power modes enable intelligent motion-based power management with threshold sensing and active acceleration measurement at extremely low power dissipation.
 
-LibDriver ADXL375 is the full function driver of adxl375 launched by LibDriver. It provides acceleration reading, acceleration FIFO mode acquisition,  activity /inactivity state detection, shock detection and other functions. LibDriver is MISRA compliant.
+LibDriver ADXL375 is a full-featured driver of ADXL375 launched by LibDriver. It provides acceleration reading, acceleration FIFO mode acquisition,  activity /inactivity state detection, shock detection and other functions. LibDriver is MISRA compliant.
 
 ### Table of Contents
 

@@ -10,7 +10,7 @@
 
 Der ADXL375 ist ein kleiner, dünner 3-Achsen-Beschleunigungsmesser mit geringem Stromverbrauch und hoher Messauflösung bis zu ±200 g. Die digitalen Ausgangsdaten sind als 16-Bit-Zweierkomplementdaten formatiert und über eine SPI- (3- oder 4-adrig) oder I2C-Digitalschnittstelle zugänglich. Ein integriertes Speicherverwaltungssystem mit einem 32-stufigen FIFO-Puffer (First In, First Out) kann zum Speichern von Daten verwendet werden, um die Aktivität des Hostprozessors zu minimieren und den Gesamtstromverbrauch des Systems zu senken. Energiesparmodi ermöglichen eine intelligente bewegungsbasierte Energieverwaltung mit Schwellenwerterkennung und aktiver Beschleunigungsmessung bei extrem geringer Verlustleistung.
 
-LibDriver ADXL375 ist der voll funktionsfähige Treiber von adxl375, der von LibDriver eingeführt wurde. Er bietet Beschleunigungsmessung, Beschleunigungserfassung im FIFO-Modus, Aktivitäts-/Inaktivitätszustandserkennung, Stoßerkennung und andere Funktionen. LibDriver ist MISRA-kompatibel.
+LibDriver ADXL375 ist der voll funktionsfähige Treiber von ADXL375, der von LibDriver eingeführt wurde. Er bietet Beschleunigungsmessung, Beschleunigungserfassung im FIFO-Modus, Aktivitäts-/Inaktivitätszustandserkennung, Stoßerkennung und andere Funktionen. LibDriver ist MISRA-kompatibel.
 
 ### Inhaltsverzeichnis
 
