@@ -208,15 +208,6 @@ typedef enum
 } adxl375_trigger_status_t;
 
 /**
- * @}
- */
-
-/**
- * @addtogroup adxl375_interrupt_driver
- * @{
- */
-
-/**
  * @brief adxl375 interrupt enumeration definition
  */
 typedef enum
@@ -247,15 +238,6 @@ typedef enum
     ADXL375_INTERRUPT_ACTIVE_LEVEL_HIGH = 0x00,        /**< interrupt active level high */
     ADXL375_INTERRUPT_ACTIVE_LEVEL_LOW  = 0x01,        /**< interrupt active level low */
 } adxl375_interrupt_active_level_t;
-
-/**
- * @}
- */
-
-/**
- * @addtogroup adxl375_basic_driver
- * @{
- */
 
 /**
  * @brief adxl375 handle structure definition
