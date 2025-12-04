@@ -1,3 +1,9 @@
+## 1.0.5 (2025-12-05)
+
+## Bug Fixes
+
+- fix test times bugs
+
 ## 1.0.4 (2025-10-26)
 
 ## Features
