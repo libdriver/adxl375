@@ -1,3 +1,9 @@
+## 1.0.6 (2026-06-21)
+
+## Bug Fixes
+
+- fix offset convert bugs
+
 ## 1.0.5 (2025-12-05)
 
 ## Bug Fixes

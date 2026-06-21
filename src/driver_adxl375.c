@@ -477,7 +477,7 @@ uint8_t adxl375_offset_convert_to_register(adxl375_handle_t *handle, float g, in
         return 3;                       /* return error */
     }
     
-    *reg = (int8_t)(g / 0.196f);        /* convert real data to register data */
+    *reg = (int8_t)(g / 1.56f);         /* convert real data to register data */
     
     return 0;                           /* success return 0 */
 }
@@ -504,7 +504,7 @@ uint8_t adxl375_offset_convert_to_data(adxl375_handle_t *handle, int8_t reg, flo
         return 3;                      /* return error */
     }
     
-    *g = (float)(reg) * 0.196f;        /* convert raw data to real data */
+    *g = (float)(reg) * 1.56f;         /* convert raw data to real data */
     
     return 0;                          /* success return 0 */
 }
