@@ -2293,34 +2293,34 @@ $(function(){initNavTree('driver__adxl375_8c_source.html','',''); });
 <div class="line"><a id="l03021" name="l03021"></a><span class="lineno"> 3021</span>           </div>
 <div class="line"><a id="l03022" name="l03022"></a><span class="lineno"> 3022</span>            <span class="keywordflow">return</span> 1;                                                                             <span class="comment">/* return error */</span></div>
 <div class="line"><a id="l03023" name="l03023"></a><span class="lineno"> 3023</span>        }</div>
-<div class="line"><a id="l03024" name="l03024"></a><span class="lineno"> 3024</span>        raw[0][0] = (int16_t)(buf[1] &lt;&lt; 8) | buf[0];                                              <span class="comment">/* set raw z */</span></div>
+<div class="line"><a id="l03024" name="l03024"></a><span class="lineno"> 3024</span>        raw[0][0] = (int16_t)(buf[1] &lt;&lt; 8) | buf[0];                                              <span class="comment">/* set raw x */</span></div>
 <div class="line"><a id="l03025" name="l03025"></a><span class="lineno"> 3025</span>        raw[0][1] = (int16_t)(buf[3] &lt;&lt; 8) | buf[2];                                              <span class="comment">/* set raw y */</span></div>
 <div class="line"><a id="l03026" name="l03026"></a><span class="lineno"> 3026</span>        raw[0][2] = (int16_t)(buf[5] &lt;&lt; 8) | buf[4];                                              <span class="comment">/* set raw z */</span></div>
 <div class="line"><a id="l03027" name="l03027"></a><span class="lineno"> 3027</span>        <span class="keywordflow">if</span> (justify == 1)                                                                         <span class="comment">/* if justify */</span></div>
 <div class="line"><a id="l03028" name="l03028"></a><span class="lineno"> 3028</span>        {</div>
-<div class="line"><a id="l03029" name="l03029"></a><span class="lineno"> 3029</span>            <span class="keywordflow">if</span> ((raw[0][0] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03029" name="l03029"></a><span class="lineno"> 3029</span>            <span class="keywordflow">if</span> ((raw[0][0] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03030" name="l03030"></a><span class="lineno"> 3030</span>            {</div>
-<div class="line"><a id="l03031" name="l03031"></a><span class="lineno"> 3031</span>                raw[0][0] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[0][0] &gt;&gt; 6) &amp; 0x3FF);                   <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03031" name="l03031"></a><span class="lineno"> 3031</span>                raw[0][0] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[0][0] &gt;&gt; 3) &amp; 0x1FFF);                  <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03032" name="l03032"></a><span class="lineno"> 3032</span>            }</div>
 <div class="line"><a id="l03033" name="l03033"></a><span class="lineno"> 3033</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03034" name="l03034"></a><span class="lineno"> 3034</span>            {</div>
-<div class="line"><a id="l03035" name="l03035"></a><span class="lineno"> 3035</span>                raw[0][0] = (raw[0][0] &gt;&gt; 6) &amp; 0x3FF;                                             <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03035" name="l03035"></a><span class="lineno"> 3035</span>                raw[0][0] = (raw[0][0] &gt;&gt; 3) &amp; 0x1FFF;                                            <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03036" name="l03036"></a><span class="lineno"> 3036</span>            }</div>
-<div class="line"><a id="l03037" name="l03037"></a><span class="lineno"> 3037</span>            <span class="keywordflow">if</span> ((raw[0][1] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03037" name="l03037"></a><span class="lineno"> 3037</span>            <span class="keywordflow">if</span> ((raw[0][1] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03038" name="l03038"></a><span class="lineno"> 3038</span>            {</div>
-<div class="line"><a id="l03039" name="l03039"></a><span class="lineno"> 3039</span>                raw[0][1] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[0][1] &gt;&gt; 6) &amp; 0x3FF);                   <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03039" name="l03039"></a><span class="lineno"> 3039</span>                raw[0][1] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[0][1] &gt;&gt; 3) &amp; 0x1FFF);                  <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03040" name="l03040"></a><span class="lineno"> 3040</span>            }</div>
 <div class="line"><a id="l03041" name="l03041"></a><span class="lineno"> 3041</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03042" name="l03042"></a><span class="lineno"> 3042</span>            {</div>
-<div class="line"><a id="l03043" name="l03043"></a><span class="lineno"> 3043</span>                raw[0][1] = (raw[0][1] &gt;&gt; 6) &amp; 0x3FF;                                             <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03043" name="l03043"></a><span class="lineno"> 3043</span>                raw[0][1] = (raw[0][1] &gt;&gt; 3) &amp; 0x1FFF;                                            <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03044" name="l03044"></a><span class="lineno"> 3044</span>            }</div>
-<div class="line"><a id="l03045" name="l03045"></a><span class="lineno"> 3045</span>            <span class="keywordflow">if</span> ((raw[0][2] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03045" name="l03045"></a><span class="lineno"> 3045</span>            <span class="keywordflow">if</span> ((raw[0][2] &amp; (1 &lt;&lt; 15)) != 0)                                                     <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03046" name="l03046"></a><span class="lineno"> 3046</span>            {</div>
-<div class="line"><a id="l03047" name="l03047"></a><span class="lineno"> 3047</span>                raw[0][2] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[0][2] &gt;&gt; 6) &amp; 0x3FF);                   <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03047" name="l03047"></a><span class="lineno"> 3047</span>                raw[0][2] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[0][2] &gt;&gt; 3) &amp; 0x1FFF);                  <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03048" name="l03048"></a><span class="lineno"> 3048</span>            }</div>
 <div class="line"><a id="l03049" name="l03049"></a><span class="lineno"> 3049</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03050" name="l03050"></a><span class="lineno"> 3050</span>            {</div>
-<div class="line"><a id="l03051" name="l03051"></a><span class="lineno"> 3051</span>                raw[0][2] = (raw[0][2] &gt;&gt; 6) &amp; 0x3FF;                                             <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03051" name="l03051"></a><span class="lineno"> 3051</span>                raw[0][2] = (raw[0][2] &gt;&gt; 3) &amp; 0x1FFF;                                            <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03052" name="l03052"></a><span class="lineno"> 3052</span>            }</div>
 <div class="line"><a id="l03053" name="l03053"></a><span class="lineno"> 3053</span>        }</div>
 <div class="line"><a id="l03054" name="l03054"></a><span class="lineno"> 3054</span>        g[0][0] = (float)(raw[0][0]) * 0.049f;                                                    <span class="comment">/* convert x */</span></div>
@@ -2352,29 +2352,29 @@ $(function(){initNavTree('driver__adxl375_8c_source.html','',''); });
 <div class="line"><a id="l03080" name="l03080"></a><span class="lineno"> 3080</span>            raw[i][2] = (int16_t)(buf[5 + i * 6] &lt;&lt; 8) | buf[4 + i * 6];                          <span class="comment">/* set raw z */</span></div>
 <div class="line"><a id="l03081" name="l03081"></a><span class="lineno"> 3081</span>            <span class="keywordflow">if</span> (justify == 1)                                                                     <span class="comment">/* if justify */</span></div>
 <div class="line"><a id="l03082" name="l03082"></a><span class="lineno"> 3082</span>            {</div>
-<div class="line"><a id="l03083" name="l03083"></a><span class="lineno"> 3083</span>                <span class="keywordflow">if</span> ((raw[i][0] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03083" name="l03083"></a><span class="lineno"> 3083</span>                <span class="keywordflow">if</span> ((raw[i][0] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03084" name="l03084"></a><span class="lineno"> 3084</span>                {</div>
-<div class="line"><a id="l03085" name="l03085"></a><span class="lineno"> 3085</span>                    raw[i][0] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[i][0] &gt;&gt; 6) &amp; 0x3FF);               <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03085" name="l03085"></a><span class="lineno"> 3085</span>                    raw[i][0] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[i][0] &gt;&gt; 3) &amp; 0x1FFF);              <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03086" name="l03086"></a><span class="lineno"> 3086</span>                }</div>
 <div class="line"><a id="l03087" name="l03087"></a><span class="lineno"> 3087</span>                <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03088" name="l03088"></a><span class="lineno"> 3088</span>                {</div>
-<div class="line"><a id="l03089" name="l03089"></a><span class="lineno"> 3089</span>                    raw[i][0] = (raw[i][0] &gt;&gt; 6) &amp; 0x3FF;                                         <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03089" name="l03089"></a><span class="lineno"> 3089</span>                    raw[i][0] = (raw[i][0] &gt;&gt; 3) &amp; 0x1FFF;                                        <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03090" name="l03090"></a><span class="lineno"> 3090</span>                }</div>
-<div class="line"><a id="l03091" name="l03091"></a><span class="lineno"> 3091</span>                <span class="keywordflow">if</span> ((raw[i][1] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03091" name="l03091"></a><span class="lineno"> 3091</span>                <span class="keywordflow">if</span> ((raw[i][1] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03092" name="l03092"></a><span class="lineno"> 3092</span>                {</div>
-<div class="line"><a id="l03093" name="l03093"></a><span class="lineno"> 3093</span>                    raw[i][1] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[i][1] &gt;&gt; 6) &amp; 0x3FF);               <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03093" name="l03093"></a><span class="lineno"> 3093</span>                    raw[i][1] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[i][1] &gt;&gt; 3) &amp; 0x1FFF);              <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03094" name="l03094"></a><span class="lineno"> 3094</span>                }</div>
 <div class="line"><a id="l03095" name="l03095"></a><span class="lineno"> 3095</span>                <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03096" name="l03096"></a><span class="lineno"> 3096</span>                {</div>
-<div class="line"><a id="l03097" name="l03097"></a><span class="lineno"> 3097</span>                    raw[i][1] = (raw[i][1] &gt;&gt; 6) &amp; 0x3FF;                                         <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03097" name="l03097"></a><span class="lineno"> 3097</span>                    raw[i][1] = (raw[i][1] &gt;&gt; 3) &amp; 0x1FFF;                                        <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03098" name="l03098"></a><span class="lineno"> 3098</span>                }</div>
-<div class="line"><a id="l03099" name="l03099"></a><span class="lineno"> 3099</span>                <span class="keywordflow">if</span> ((raw[i][2] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check signed bit */</span></div>
+<div class="line"><a id="l03099" name="l03099"></a><span class="lineno"> 3099</span>                <span class="keywordflow">if</span> ((raw[i][2] &amp; (1 &lt;&lt; 15)) != 0)                                                 <span class="comment">/* check sigend bit */</span></div>
 <div class="line"><a id="l03100" name="l03100"></a><span class="lineno"> 3100</span>                {</div>
-<div class="line"><a id="l03101" name="l03101"></a><span class="lineno"> 3101</span>                    raw[i][2] = ((uint16_t)0xFC &lt;&lt; 8) | ((raw[i][2] &gt;&gt; 6) &amp; 0x3FF);               <span class="comment">/* negative */</span></div>
+<div class="line"><a id="l03101" name="l03101"></a><span class="lineno"> 3101</span>                    raw[i][2] = ((uint16_t)0xE0 &lt;&lt; 8) | ((raw[i][2] &gt;&gt; 3) &amp; 0x1FFF);              <span class="comment">/* negative */</span></div>
 <div class="line"><a id="l03102" name="l03102"></a><span class="lineno"> 3102</span>                }</div>
 <div class="line"><a id="l03103" name="l03103"></a><span class="lineno"> 3103</span>                <span class="keywordflow">else</span></div>
 <div class="line"><a id="l03104" name="l03104"></a><span class="lineno"> 3104</span>                {</div>
-<div class="line"><a id="l03105" name="l03105"></a><span class="lineno"> 3105</span>                    raw[i][2] = (raw[i][2] &gt;&gt; 6) &amp; 0x3FF;                                         <span class="comment">/* positive */</span></div>
+<div class="line"><a id="l03105" name="l03105"></a><span class="lineno"> 3105</span>                    raw[i][2] = (raw[i][2] &gt;&gt; 3) &amp; 0x1FFF;                                        <span class="comment">/* positive */</span></div>
 <div class="line"><a id="l03106" name="l03106"></a><span class="lineno"> 3106</span>                }</div>
 <div class="line"><a id="l03107" name="l03107"></a><span class="lineno"> 3107</span>            }</div>
 <div class="line"><a id="l03108" name="l03108"></a><span class="lineno"> 3108</span>            g[i][0] = (float)(raw[i][0])*0.049f;                                                  <span class="comment">/* convert x */</span></div>
